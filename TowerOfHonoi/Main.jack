@@ -1,0 +1,21 @@
+class Main {
+	function void main() {
+		var Tower T;
+		var int size, start, end;
+		var boolean win;
+		do Output.printString("test");
+		let win = false;
+		let size = Keyboard.readInt("please input int tower size: ");
+		let T = Tower.new(size);
+		do T.display();
+		while (~(win)) {
+			let start = Keyboard.readInt("Please input stack you wish to move from: ");
+			let end = Keyboard.readInt("Please input stack you wish to move to: ");
+			do T.move(start, end);
+			do T.display();
+			let win = T.checkwin();
+		}
+		do Output.printString("you win!");
+		return;
+	}
+}
